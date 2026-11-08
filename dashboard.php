@@ -34,18 +34,18 @@ require 'partials/header.php';
         ];
         foreach ($kartu as [$label, $nilai, $ikon, $warna]): ?>
         <div class="col-md-4">
-            <div class="card p-3 d-flex flex-row align-items-center gap-3">
+            <div class="card stat-card fade-up p-3 d-flex flex-row align-items-center gap-3">
                 <div class="stat-icon bg-<?= $warna ?>-subtle text-<?= $warna ?>"><i class="bi <?= $ikon ?>"></i></div>
                 <div>
                     <div class="text-muted small"><?= $label ?></div>
-                    <div class="fs-4 fw-bold"><?= $nilai ?></div>
+                    <div class="fs-4 fw-bold" data-count="<?= $nilai ?>"><?= $nilai ?></div>
                 </div>
             </div>
         </div>
         <?php endforeach; ?>
     </div>
 
-    <div class="card p-3">
+    <div class="card fade-up delay-2 p-3">
         <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
             <h5 class="fw-bold mb-0">Daftar Buku</h5>
             <div class="d-flex gap-2">
@@ -58,7 +58,7 @@ require 'partials/header.php';
         </div>
         <div class="table-responsive">
             <table class="table table-hover align-middle">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th>No</th><th>Sampul</th><th>Judul</th><th>Kategori</th><th>Penulis</th>
                         <th>Tahun</th><th>Stok</th><th>Status</th><th class="text-end">Aksi</th>
@@ -75,7 +75,7 @@ require 'partials/header.php';
                             <?php if ($b['sampul'] && is_file('uploads/' . $b['sampul'])): ?>
                                 <img src="uploads/<?= e($b['sampul']) ?>" class="cover-thumb" alt="Sampul">
                             <?php else: ?>
-                                <div class="cover-thumb d-grid place-items-center text-muted" style="display:grid;place-items:center"><i class="bi bi-image"></i></div>
+                                <div class="cover-thumb cover-empty"><i class="bi bi-image"></i></div>
                             <?php endif; ?>
                         </td>
                         <td class="fw-semibold"><?= e($b['judul']) ?></td>
@@ -86,7 +86,7 @@ require 'partials/header.php';
                         <td><span class="badge text-bg-<?= badge_status((int) $b['stok']) ?>"><?= label_status((int) $b['stok']) ?></span></td>
                         <td class="text-end text-nowrap">
                             <a href="edit_buku.php?id=<?= (int) $b['id'] ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
-                            <form action="hapus_buku.php" method="POST" class="d-inline" onsubmit="return confirm('Hapus buku &quot;<?= e(addslashes($b['judul'])) ?>&quot;?');">
+                            <form action="hapus_buku.php" method="POST" class="d-inline" data-confirm="<?= e($b['judul']) ?>">
                                 <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
                                 <input type="hidden" name="id" value="<?= (int) $b['id'] ?>">
                                 <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
