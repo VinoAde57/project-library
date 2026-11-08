@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Kategori</label>
-            <?php $kategori_list = ['Akademik', 'Sejarah', 'Dongeng', 'Filsafat', 'Novel', 'Sains', 'Pemograman', 'Lainnya']; ?>
+            <?php $kategori_list = ['Pemrograman', 'Basis Data', 'Jaringan', 'Sistem Informasi', 'Novel', 'Sains', 'Lainnya']; ?>
             <select name="kategori" class="form-select" required>
                 <option value="">-- Pilih kategori --</option>
                 <?php foreach ($kategori_list as $k): ?>
@@ -48,19 +48,3 @@
         <a href="dashboard.php" class="btn btn-outline-secondary">Batal</a>
     </div>
 </form>
-<script>
-// JS: validasi ukuran/tipe di sisi klien + pratinjau gambar
-document.getElementById('sampul').addEventListener('change', function () {
-    const f = this.files[0];
-    const prev = document.getElementById('preview');
-    if (!f) { prev.classList.add('d-none'); return; }
-    if (!['image/jpeg', 'image/png'].includes(f.type)) {
-        alert('Format harus JPG atau PNG.'); this.value = ''; prev.classList.add('d-none'); return;
-    }
-    if (f.size > 2 * 1024 * 1024) {
-        alert('Ukuran file maksimal 2MB.'); this.value = ''; prev.classList.add('d-none'); return;
-    }
-    prev.src = URL.createObjectURL(f);
-    prev.classList.remove('d-none');
-});
-</script>
