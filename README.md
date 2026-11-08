@@ -18,7 +18,7 @@ Aplikasi manajemen data buku (CRUD) dengan Login, Session, Cookie (Remember Me),
 1. Pindahkan folder ke `htdocs` (XAMPP) atau web root lain.
 2. Import `db_perpustakaan.sql` lewat phpMyAdmin (membuat database `data_buku`, tabel `tb_buku` dan `users`).
 3. Sesuaikan kredensial di `config/koneksi.php` bila perlu.
-4. Buka `http://localhost/project_perpustakaan/`
+4. Buka `http://localhost/project-library/`
 5. Login: **admin / admin123**
 
 ## Struktur Project
