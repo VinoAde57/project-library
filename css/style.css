@@ -1,0 +1,162 @@
+/* ==========================================================
+   Mini Digital Library - style.css
+   Mendukung mode terang & gelap lewat atribut data-bs-theme
+   ========================================================== */
+
+:root {
+    --brand: #6366f1;
+    --brand-2: #8b5cf6;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(15, 23, 42, .10);
+}
+
+[data-bs-theme="dark"] {
+    --page-bg: #0b1020;
+    --card-bg: rgba(30, 41, 59, .72);
+    --card-border: rgba(148, 163, 184, .15);
+    --thead-bg: rgba(99, 102, 241, .16);
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+[data-bs-theme="light"] {
+    --page-bg: #eef1fb;
+    --card-bg: rgba(255, 255, 255, .92);
+    --card-border: rgba(15, 23, 42, .06);
+    --thead-bg: rgba(99, 102, 241, .10);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background-color: var(--page-bg);
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(99, 102, 241, .20), transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(139, 92, 246, .16), transparent 42%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-gradient {
+    background: linear-gradient(90deg, #1e1b4b, #312e81 55%, #4c1d95);
+    box-shadow: 0 6px 24px rgba(30, 27, 75, .35);
+}
+.navbar-brand { font-weight: 700; letter-spacing: .3px; }
+.navbar-brand i { color: #a5b4fc; }
+
+/* ---------- Card ---------- */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+}
+
+/* ---------- Kartu statistik ---------- */
+.stat-card { transition: transform .25s ease, box-shadow .25s ease; }
+.stat-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(99, 102, 241, .25); }
+.stat-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: grid; place-items: center; font-size: 1.5rem;
+}
+
+/* ---------- Tombol ---------- */
+.btn { border-radius: 10px; font-weight: 500; transition: transform .15s ease, box-shadow .15s ease; }
+.btn:active { transform: scale(.97); }
+.btn-primary {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    border: 0;
+    box-shadow: 0 6px 16px rgba(99, 102, 241, .35);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    box-shadow: 0 8px 22px rgba(99, 102, 241, .5);
+}
+.btn-sm { border-radius: 8px; }
+
+/* ---------- Tabel ---------- */
+.table { --bs-table-bg: transparent; }
+.table thead th {
+    background: var(--thead-bg);
+    border-bottom: 0;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    white-space: nowrap;
+}
+.table thead th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+.table thead th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+.table tbody tr { transition: background .2s ease, transform .2s ease; }
+.table tbody tr:hover { background: rgba(99, 102, 241, .10); }
+.table td { vertical-align: middle; }
+
+.cover-thumb {
+    width: 48px; height: 66px; object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    transition: transform .25s ease;
+}
+.cover-thumb:hover { transform: scale(1.6); position: relative; z-index: 5; }
+.cover-empty {
+    display: grid; place-items: center;
+    background: rgba(148, 163, 184, .2); color: #94a3b8; box-shadow: none;
+}
+.cover-empty:hover { transform: none; }
+
+.badge { padding: .45em .8em; border-radius: 999px; font-weight: 600; letter-spacing: .3px; }
+
+/* ---------- Form ---------- */
+.form-control, .form-select { border-radius: 10px; padding: .6rem .85rem; }
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 .25rem rgba(99, 102, 241, .25);
+}
+.form-label { font-weight: 500; }
+.input-group-text { border-radius: 10px 0 0 10px; }
+.cover-preview { max-height: 190px; border-radius: 10px; box-shadow: var(--shadow); }
+
+/* ---------- Halaman login ---------- */
+.login-wrap {
+    min-height: 100vh; display: grid; place-items: center; padding: 1rem;
+    background: linear-gradient(135deg, #1e1b4b, #4338ca, #7c3aed, #1e1b4b);
+    background-size: 300% 300%;
+    animation: gradientMove 14s ease infinite;
+}
+.login-card { max-width: 410px; width: 100%; padding: 2rem; }
+.login-logo {
+    width: 72px; height: 72px; margin: 0 auto .5rem; border-radius: 20px;
+    display: grid; place-items: center; font-size: 2.2rem; color: #fff;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    box-shadow: 0 10px 24px rgba(99, 102, 241, .5);
+}
+
+/* ---------- Tombol tema melayang (halaman login) ---------- */
+.theme-float {
+    position: fixed; top: 16px; right: 16px; z-index: 1000;
+    width: 42px; height: 42px; border-radius: 50%; padding: 0;
+}
+
+/* ---------- Animasi ---------- */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .55s ease both; }
+.delay-1 { animation-delay: .08s; }
+.delay-2 { animation-delay: .16s; }
+.delay-3 { animation-delay: .24s; }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, .5); border-radius: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
