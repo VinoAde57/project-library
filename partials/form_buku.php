@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Kategori</label>
-            <?php $kategori_list = ['Pemrograman', 'Basis Data', 'Jaringan', 'Sistem Informasi', 'Novel', 'Sains', 'Lainnya']; ?>
+            <?php $kategori_list = ['Pemrograman', 'Novel', 'Dongeng', 'Filsfat', 'Sejarah', 'Sains', 'Lainnya']; ?>
             <select name="kategori" class="form-select" required>
                 <option value="">-- Pilih kategori --</option>
                 <?php foreach ($kategori_list as $k): ?>
