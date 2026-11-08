@@ -23,14 +23,29 @@ Aplikasi manajemen data buku (CRUD) dengan Login, Session, Cookie (Remember Me),
 
 ## Struktur Project
 ```
-project_perpustakaan/
-├── config/ (koneksi.php, auth.php, upload.php)
-├── partials/ (header.php, footer.php, form_buku.php)
+project-library/
+├── config/
+│   ├── koneksi.php
+│   ├── auth.php
+│   └── upload.php
+├── css/
+│   └── style.css
+├── img/
+├── js/
+│   └── app.js
+├── partials/
+│   ├── header.php
+│   ├── footer.php
+│   └── form_buku.php
 ├── uploads/
-├── index.php, proses_login.php, logout.php
+├── index.php
+├── proses_login.php
+├── logout.php
 ├── dashboard.php
-├── tambah_buku.php, proses_tambah.php
-├── edit_buku.php, proses_edit.php
+├── tambah_buku.php
+├── proses_tambah.php
+├── edit_buku.php
+├── proses_edit.php
 ├── hapus_buku.php
 └── db_perpustakaan.sql
 ```
