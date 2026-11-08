@@ -63,6 +63,6 @@ project_perpustakaan/
 | Data di MySQL | ![Data](img/data-MySQL.png) |
 | Login | ![Login](img/login.png) |
 | Dashboard (Read) | ![Dashboard](img/dashboard.png) |
-| Tambah Buku (Create + Upload) | ![Tambah](img/tambah-buku.png) |
-| Edit Buku (Update) | ![Edit](img/edit-buku.png) |
-| Hapus Buku (Delete) | ![Hapus](img/hapus-buku.png) |
+| Tambah Buku (Create + Upload) | ![Tambah](img/tambah.png) |
+| Edit Buku (Update) | ![Edit](img/edit.png) |
+| Hapus Buku (Delete) | ![Hapus](img/hapus.png) |
