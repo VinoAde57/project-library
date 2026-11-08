@@ -14,9 +14,9 @@ $tampilkan_nav = false;
 require 'partials/header.php';
 ?>
 <div class="login-wrap">
-    <div class="card p-4" style="width: 100%; max-width: 400px;">
+    <div class="card login-card fade-up">
         <div class="text-center mb-4">
-            <i class="bi bi-journal-bookmark-fill text-primary" style="font-size: 3rem;"></i>
+            <div class="login-logo"><i class="bi bi-journal-bookmark-fill"></i></div>
             <h4 class="fw-bold mt-2 mb-0">Mini Digital Library</h4>
             <p class="text-muted small">Silakan login untuk melanjutkan</p>
         </div>
@@ -33,7 +33,8 @@ require 'partials/header.php';
                 <label class="form-label">Password</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" name="password" class="form-control" required>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                    <button type="button" class="btn btn-outline-secondary" data-toggle-password="#password"><i class="bi bi-eye"></i></button>
                 </div>
             </div>
             <div class="form-check mb-3">
