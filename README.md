@@ -57,12 +57,11 @@ project_perpustakaan/
 | sampul | VARCHAR(255) | nama file di folder `uploads/` |
 
 ## Screenshot
-> Ganti path gambar di bawah dengan screenshot Anda (simpan di folder `screenshots/`).
 
 | Halaman | Screenshot |
 |---|---|
-| Login | ![Login](screenshots/login.png) |
-| Dashboard (Read) | ![Dashboard](screenshots/dashboard.png) |
-| Tambah Buku (Create + Upload) | ![Tambah](screenshots/tambah.png) |
-| Edit Buku (Update) | ![Edit](screenshots/edit.png) |
-| Hapus Buku (Delete) | ![Hapus](screenshots/hapus.png) |
+| Login | ![Login](img/login.png) |
+| Dashboard (Read) | ![Dashboard](img/dashboard.png) |
+| Tambah Buku (Create + Upload) | ![Tambah](img/tambah-buku.png) |
+| Edit Buku (Update) | ![Edit](img/edit-buku.png) |
+| Hapus Buku (Delete) | ![Hapus](img/hapus-buku.png) |
