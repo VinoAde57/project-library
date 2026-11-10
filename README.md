@@ -4,7 +4,7 @@ Tugas Terstruktur Pemrograman Web — Program Studi Sistem Informasi.
 Aplikasi manajemen data buku (CRUD) dengan Login, Session, Cookie (Remember Me), dan Upload Sampul, dibuat dengan **PHP Native + MySQL (mysqli)** dan Bootstrap 5.
 
 - **Nama / NIM:** _Vino Ade C / 2513020057_
-- **Video demo:** _tempel link YouTube_
+- **Video demo:** _https://youtu.be/FGHtVJsnw5Y_
 
 ## Fitur
 - Login (POST), Session, Remember Me (cookie username 7 hari), Logout (hapus session & cookie)
